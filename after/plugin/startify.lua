@@ -1,7 +1,7 @@
 vim.g.startify_custom_header = "startify#center(startify#fortune#cowsay())"
 
 vim.g.startify_bookmarks = { {
-	b = "~/.zshrc",
+	b = "~/.bashrc",
 }, {
 	v = "~/.config/nvim/init.lua",
 } }
