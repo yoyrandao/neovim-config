@@ -55,6 +55,7 @@ keymap('t', '<C-j>', '<C-\\><C-N><C-w>j')
 keymap('t', '<C-k>', '<C-\\><C-N><C-w>k')
 keymap('t', '<C-l>', '<C-\\><C-N><C-w>l')
 keymap('t', '<ESC>', '<C-\\><C-N>')
+keymap('t', '<C-l>', '<nop>')
 
 
 keymap('n', '<leader>y', '\"+y')
