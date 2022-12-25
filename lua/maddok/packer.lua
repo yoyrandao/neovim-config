@@ -1,10 +1,10 @@
 vim.cmd [[packadd packer.nvim]]
 
 vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
-  augroup end
+	augroup packer_user_config
+		autocmd!
+		autocmd BufWritePost packer.lua source <afile> | PackerSync
+	augroup end
 ]]
 
 local status_ok, packer = pcall(require, "packer")
@@ -25,7 +25,7 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
+		-- or branch = '0.1.x',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
@@ -56,6 +56,8 @@ return packer.startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+	use 'j-hui/fidget.nvim'
+	use 'folke/neodev.nvim'
 
 	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
@@ -69,6 +71,11 @@ return packer.startup(function(use)
 	use 'p00f/nvim-ts-rainbow'
 	use 'majutsushi/tagbar'
 
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	use {
+		'nvim-treesitter/nvim-treesitter-textobjects',
+		after = 'nvim-treesitter',
+	}
+
+	use 'nvim-lualine/lualine.nvim'
+	use 'lukas-reineke/indent-blankline.nvim'
 end)
