@@ -10,6 +10,9 @@ keymap('n', '<C-Right>', ':vertical resize +2<CR>')
 keymap('n', 'j', 'jzz', { silent = true })
 keymap('n', 'k', 'kzz', { silent = true })
 
+keymap('n', '}', '}zz', { silent = true })
+keymap('n', '{', '{zz', { silent = true })
+
 keymap('n', '<leader>e', ':Ex<CR>')
 
 keymap('n', '<C-h>', '<C-w>h')
