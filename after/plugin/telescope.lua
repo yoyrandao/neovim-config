@@ -53,8 +53,10 @@ telescope.setup {
 	}
 }
 
-keymap('n', '<leader>ff', builtin.find_files, {})
-keymap('n', '<C-p>', builtin.git_files, {})
+telescope.load_extension('fzf')
+
+keymap('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+keymap('n', '<C-p>', builtin.git_files, { desc = 'List git files' })
 keymap('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input('grep > ') });
-end)
+end, { desc = 'Grep [S]tring' })

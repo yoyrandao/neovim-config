@@ -28,6 +28,7 @@ return packer.startup(function(use)
 		-- or branch = '0.1.x',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 	use 'drewtempelmeyer/palenight.vim'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -69,7 +70,6 @@ return packer.startup(function(use)
 	use 'mhinz/vim-startify'
 
 	use 'p00f/nvim-ts-rainbow'
-	use 'majutsushi/tagbar'
 
 	use {
 		'nvim-treesitter/nvim-treesitter-textobjects',
@@ -78,4 +78,5 @@ return packer.startup(function(use)
 
 	use 'nvim-lualine/lualine.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use 'tpope/vim-sleuth'
 end)

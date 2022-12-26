@@ -28,6 +28,7 @@ keymap('n', '<C-Right>', ':vertical resize +2<CR>')
 
 keymap('n', '<S-l>', ':bnext<CR>')
 keymap('n', '<S-h>', ':bprevious<CR>')
+keymap('n', '<C-w>', ':bdelete<CR>')
 
 keymap('n', 'J', 'mzJ`z')
 
@@ -38,15 +39,16 @@ keymap('n', 'n', 'nzzzv')
 keymap('n', 'N', 'Nzzzv')
 
 keymap('n', 'Q', '<nop>')
-keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[S]ubstitute word in document' })
+
+keymap('n', 'p', '"0p')
+
+keymap('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { desc = 'Move line up' })
+keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { desc = 'Move line down' })
 
 
-keymap('i', '<A-j>', '<Esc>:m .+1<CR>==gi')
-keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
-
-
-keymap('v', '<', '<gv')
-keymap('v', '>', '>gv')
+keymap('v', '<', '<gv', { desc = 'Indent line left' })
+keymap('v', '>', '>gv', { desc = 'Indent line right' })
 keymap('v', 'p', '\'_dP')
 
 keymap('v', '<A-j>', ':m \'>+1<CR>gv=gv')
@@ -59,7 +61,6 @@ keymap('t', '<C-k>', '<C-\\><C-N><C-w>k')
 keymap('t', '<C-l>', '<C-\\><C-N><C-w>l')
 keymap('t', '<ESC>', '<C-\\><C-N>')
 keymap('t', '<C-l>', '<nop>')
-
 
 keymap('n', '<leader>y', '\"+y')
 keymap('v', '<leader>y', '\"+y')
