@@ -79,4 +79,11 @@ return packer.startup(function(use)
 	use 'nvim-lualine/lualine.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'tpope/vim-sleuth'
+
+	use {
+		'VonHeikemen/fine-cmdline.nvim',
+		requires = {
+			{ 'MunifTanjim/nui.nvim' }
+		}
+	}
 end)

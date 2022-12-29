@@ -48,7 +48,7 @@ vim.opt.updatetime = 50
 
 vim.opt.writebackup = false
 
-vim.opt.expandtab = false
+vim.opt.expandtab = true 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
