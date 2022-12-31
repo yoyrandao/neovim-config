@@ -80,7 +80,7 @@ lsp.on_attach(function(_, bufnr)
 	keymap('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end,
 		mergeTables(opts, { desc = '[V]iew [W]orkspace [S]ymbol aka Find Symbol' }))
 	keymap('n', '<leader>vd', function() vim.diagnostic.open_float() end, mergeTables(opts, { desc = '[V]iew Error Float' }))
-	keymap('n', '<leader>q', function() vim.diagnostic.setloclist() end, mergeTables(opts, { desc = 'View file errors' }))
+	-- keymap('n', '<leader>q', function() vim.diagnostic.setloclist() end, mergeTables(opts, { desc = 'View file errors' })) REPLACED BY 'TROUBLE'
 	keymap('n', '[d', function() vim.diagnostic.goto_next() end, mergeTables(opts, { desc = 'Go to next error' }))
 	keymap('n', ']d', function() vim.diagnostic.goto_prev() end, mergeTables(opts, { desc = 'Go to previous error' }))
 	keymap('n', '<leader>vca', function() vim.lsp.buf.code_action() end,
@@ -91,6 +91,13 @@ lsp.on_attach(function(_, bufnr)
 	keymap('i', '<C-Space>', function() vim.lsp.buf.signature_help() end, mergeTables(opts, { desc = 'Signature help' }))
 
 	keymap('n', '<A-F>', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format buffer' })
+
+	require('lsp_signature').on_attach({
+		bind = true,
+		handler_opts = {
+			border = 'rounded'
+		}
+	}, bufnr)
 end)
 
 vim.diagnostic.config({

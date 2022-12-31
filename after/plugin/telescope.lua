@@ -2,11 +2,13 @@ local keymap = vim.keymap.set
 
 local status_ok_telescope, telescope = pcall(require, 'telescope')
 if not status_ok_telescope then
+	print('cannot load telescope')
 	return
 end
 
 local status_ok_builtin, builtin = pcall(require, 'telescope.builtin')
 if not status_ok_builtin then
+	print('cannot load telescope builtin functions')
 	return
 end
 

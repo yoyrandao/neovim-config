@@ -31,6 +31,8 @@ return packer.startup(function(use)
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 	use 'drewtempelmeyer/palenight.vim'
+	use 'EdenEast/nightfox.nvim'
+
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	use 'theprimeagen/harpoon'
@@ -59,6 +61,7 @@ return packer.startup(function(use)
 	}
 	use 'j-hui/fidget.nvim'
 	use 'folke/neodev.nvim'
+	use 'ray-x/lsp_signature.nvim'
 
 	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
@@ -67,7 +70,7 @@ return packer.startup(function(use)
 	use 'tpope/vim-surround'
 	use 'lewis6991/gitsigns.nvim'
 
-	use 'mhinz/vim-startify'
+	use 'glepnir/dashboard-nvim'
 
 	use 'p00f/nvim-ts-rainbow'
 
@@ -81,9 +84,15 @@ return packer.startup(function(use)
 	use 'tpope/vim-sleuth'
 
 	use {
-		'VonHeikemen/fine-cmdline.nvim',
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	}
+
+	use {
+		'nvim-tree/nvim-tree.lua',
 		requires = {
-			{ 'MunifTanjim/nui.nvim' }
-		}
+			'nvim-tree/nvim-web-devicons',
+		},
+		tag = 'nightly'
 	}
 end)
