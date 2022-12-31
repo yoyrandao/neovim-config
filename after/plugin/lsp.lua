@@ -71,6 +71,14 @@ local function mergeTables(first_table, second_table)
 end
 
 lsp.on_attach(function(_, bufnr)
+
+	require('lsp_signature').on_attach({
+		bind = true,
+		handler_opts = {
+			border = 'rounded'
+		}
+	}, bufnr)
+
 	local opts = { buffer = bufnr, remap = false }
 
 	keymap('n', 'gd', function() vim.lsp.buf.definition() end, mergeTables(opts, { desc = '[G]o to [D]efinition' }))
@@ -91,13 +99,6 @@ lsp.on_attach(function(_, bufnr)
 	keymap('i', '<C-Space>', function() vim.lsp.buf.signature_help() end, mergeTables(opts, { desc = 'Signature help' }))
 
 	keymap('n', '<A-F>', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format buffer' })
-
-	require('lsp_signature').on_attach({
-		bind = true,
-		handler_opts = {
-			border = 'rounded'
-		}
-	}, bufnr)
 end)
 
 vim.diagnostic.config({

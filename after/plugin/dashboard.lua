@@ -1,16 +1,11 @@
 local status_ok, dashboard = pcall(require, 'dashboard')
 if not status_ok then
-	print('cannot load "dashboar" plugin')
+	print('cannot load "dashboard" plugin')
 	return
 end
 
 
 dashboard.custom_center = {
-	{
-		icon = ' ',
-		desc = 'Recently latest session                ',
-		shortcut = 'SPC s l',
-	},
 	{
 		icon = ' ',
 		desc = 'Find File                               ',
@@ -19,7 +14,6 @@ dashboard.custom_center = {
 	{
 		icon = ' ',
 		desc = 'File Browser                           ',
-		action = 'Telescope file_browser',
 		shortcut = 'SPC e'
 	},
 	{

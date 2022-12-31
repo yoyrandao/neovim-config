@@ -95,4 +95,12 @@ return packer.startup(function(use)
 		},
 		tag = 'nightly'
 	}
+
+	use({
+		"folke/noice.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		}
+	})
 end)

@@ -6,6 +6,10 @@ end
 
 bufferline.setup {
 	options = {
-		diagnostics = 'nvim_lsp'
+		diagnostics = 'nvim_lsp',
+		offsets = {
+			{ filetype = 'NvimTree', text = '', padding = 1 },
+		},
+		separator_style = 'thin',
 	}
 }
